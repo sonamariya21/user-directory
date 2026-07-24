@@ -8,13 +8,7 @@ ASP.NET Core 8 Web API for managing a user directory.
 dotnet build backend/user-directory.sln
 ```
 
-## Unit tests (MSTest)
 
- in Visual Studio: open `backend/user-directory.sln`, then Test → Run All Tests.
-
-The `backend/backend.Tests` project covers:
-- `UsersController` (API responses with mocked service)
-- `UserService` (business logic with mocked repository)
 
 ## Run
 
@@ -29,6 +23,14 @@ Then open Swagger at `https://localhost:7189/swagger`.
 2. Right-click **backend** → **Set as Startup Project**
 3. Select launch profile **backend** (or **https**)
 4. Press **F5** (Swagger opens automatically)
+
+## Unit tests (MSTest)
+
+ in Visual Studio: open `backend/user-directory.sln`, then Test → Run All Tests.
+
+The `backend/backend.Tests` project covers:
+- `UsersController` (API responses with mocked service)
+- `UserService` (business logic with mocked repository)
 
 ## Auth (JWT Bearer)
 
