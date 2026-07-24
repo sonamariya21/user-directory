@@ -15,6 +15,10 @@ namespace backend.ServiceLayer
         }
 
         #region PUBLIC METHODS
+        /// <summary>
+        /// Get all user details
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<UserDto>> GetAllUsers()
         {
             var users = await _userRepo.GetAllUsers();
@@ -30,6 +34,11 @@ namespace backend.ServiceLayer
             });
         }
 
+        /// <summary>
+        /// Get user details by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<UserDto?> GetUserById(int id)
         {
             var user = await _userRepo.GetUserById(id);
@@ -48,6 +57,11 @@ namespace backend.ServiceLayer
             };
         }
 
+        /// <summary>
+        /// add user details into the table
+        /// </summary>
+        /// <param name="userdto"></param>
+        /// <returns></returns>
         public async Task<UserDto> AddUser(UserDto userdto)
         {
             var user = new User
@@ -72,6 +86,12 @@ namespace backend.ServiceLayer
             };
         }
 
+        /// <summary>
+        /// update user deatils
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="userdto"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateUser(int id, UserDto userdto)
         {
             var user = await _userRepo.GetUserById(id);
@@ -90,6 +110,11 @@ namespace backend.ServiceLayer
             return true;
         }
 
+        /// <summary>
+        /// delete user from the table by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<bool> DeleteUser(int id)
         {
             var user = await _userRepo.GetUserById(id);

@@ -18,6 +18,10 @@ public class UsersController : ControllerBase
     }
 
     #region PUBLIC METHODS
+    /// <summary>
+    /// Get all user list
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("get-all-users")]
     public async Task<IActionResult> GetAllUsers()
     {
@@ -26,6 +30,11 @@ public class UsersController : ControllerBase
         return Ok(users);
     }
 
+    /// <summary>
+    /// Get user details by id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("get-user-by-id/{id}")]
     public async Task<IActionResult> GetUserById(int id)
     {
@@ -37,6 +46,11 @@ public class UsersController : ControllerBase
         return Ok(user);
     }
 
+    /// <summary>
+    /// add user details
+    /// </summary>
+    /// <param name="dto"></param>
+    /// <returns></returns>
     [HttpPost("add-user")]
     public async Task<IActionResult> AddUser(UserDto dto)
     {
@@ -50,6 +64,12 @@ public class UsersController : ControllerBase
             user);
     }
 
+    /// <summary>
+    /// update user details
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="dto"></param>
+    /// <returns></returns>
     [HttpPut("update-user/{id}")]
     public async Task<IActionResult> UpdateUser(int id, UserDto dto)
     {
@@ -64,6 +84,11 @@ public class UsersController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// delete user from the table by id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpDelete("delete-user/{id}")]
     public async Task<IActionResult> DeleteUser(int id)
     {
