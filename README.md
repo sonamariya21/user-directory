@@ -62,25 +62,9 @@ Authorization: Bearer <access_token>
 | PUT | `/api/user-directory/update-user/{id}` | Yes | Update user |
 | DELETE | `/api/user-directory/delete-user/{id}` | Yes | Delete user |
 
-## Git with Cursor
+## Cursor AI
+Use Cursor’s AI chat to simplify **code implementation** and **Git** — write features faster and handle **pull**, **commit**, and **push** 
 
-Use **Cursor** for day-to-day Git instead of memorizing every command:
-
-1. Open the repo folder in Cursor
-2. Ask the agent in chat, for example:
-   - “Show git status and diff”
-   - “Commit these changes with message …”
-   - “Create branch `feature/x` from `main`”
-   - “Push current branch and open a PR”
-3. Review the proposed commands/diff before confirming
-4. Prefer Cursor for: status, commit, branch, PR creation, conflict guidance
-
-Still useful to know:
-
-```bash
-git status
-git pull
-```
 ## Default demo credentials
 
 | Username | Password |
