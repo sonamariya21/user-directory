@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #222;
+  background: #fff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+  background: #f5f5f5;
+}
+
+.navbar__brand {
+  font-weight: 700;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #222;
+}
+
+.nav-link.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel--narrow {
+  max-width: 480px;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #888;
+  background: #fff;
+  color: #222;
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.status {
+  margin: 1rem 0;
+}
+
+.status--error {
+  color: #b00020;
+}
+
+.toast {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #8bc34a;
+  background: #f1f8e9;
+  color: #33691e;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.toast__close {
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.user-table th {
+  background: #f5f5f5;
+}
+
+.user-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid #888;
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+}
+
+.field input[aria-invalid='true'] {
+  border-color: #b00020;
+}
+
+.field__error {
+  margin: 0;
+  color: #b00020;
+  font-size: 0.875rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
