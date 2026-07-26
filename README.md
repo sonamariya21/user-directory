@@ -2,12 +2,12 @@
 
 ASP.NET Core 8 Web API for managing a user directory.
 
-Clean Architecture layout under `backend/`:
+Architecture layout under `backend/`:
 
 | Project | Role |
 |---------|------|
 | `UserDirectory.Domain` | Entities |
-| `UserDirectory.Application` | Use cases, DTOs, ports |
+| `UserDirectory.Application` | Use cases, DTOs |
 | `UserDirectory.Infrastructure` | EF Core, JWT, repository implementations |
 | `UserDirectory.Api` | Controllers, host, Swagger |
 | `UserDirectory.Tests` | Unit tests |
@@ -73,12 +73,6 @@ Set in `appsettings.json`:
   "Audience": "user-directory-api"
 }
 ```
-
-Examples:
-- Azure AD: `https://login.microsoftonline.com/{tenant-id}/v2.0`
-- Auth0: `https://{your-domain}.auth0.com/`
-
-When `Authority` is set, local `/api/auth/login` is disabled — get tokens from the IdP.
 
 ## API
 
