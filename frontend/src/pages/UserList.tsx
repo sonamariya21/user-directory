@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { getAllUsers } from '../services/api'
 import type { User } from '../types/User'
@@ -83,8 +84,9 @@ const UserList = () => {
       )}
 
       {loading && (
-        <div className="status" role="status">
-          Loading users…
+        <div className="loading" role="status" aria-live="polite">
+          <CircularProgress size={28} sx={{ color: '#222' }} />
+          <span>Loading users…</span>
         </div>
       )}
 

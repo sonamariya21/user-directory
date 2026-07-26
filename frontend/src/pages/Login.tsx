@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
 import { useForm } from 'react-hook-form'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { login } from '../services/api'
@@ -84,7 +85,14 @@ const Login = () => {
 
         <div className="form-actions">
           <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
-            {isSubmitting ? 'Signing in…' : 'Login'}
+            {isSubmitting ? (
+              <>
+                <CircularProgress size={16} sx={{ color: '#fff' }} />
+                Signing in…
+              </>
+            ) : (
+              'Login'
+            )}
           </button>
         </div>
       </form>
