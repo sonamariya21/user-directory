@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { addUser } from '../services/api'
@@ -152,7 +153,14 @@ const AddUser = () => {
             Cancel
           </button>
           <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
-            {isSubmitting ? 'Saving…' : 'Save'}
+            {isSubmitting ? (
+              <>
+                <CircularProgress size={16} sx={{ color: '#fff' }} />
+                Saving…
+              </>
+            ) : (
+              'Save'
+            )}
           </button>
         </div>
       </form>
