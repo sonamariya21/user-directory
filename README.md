@@ -2,15 +2,35 @@
 
 ASP.NET Core 8 Web API for managing a user directory.
 
-## Prerequisites
+Clean Architecture layout under `backend/`:
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (or a newer SDK that can target `net8.0`)
+| Project | Role |
+|---------|------|
+| `UserDirectory.Domain` | Entities |
+| `UserDirectory.Application` | Use cases, DTOs, ports |
+| `UserDirectory.Infrastructure` | EF Core, JWT, repository implementations |
+| `UserDirectory.Api` | Controllers, host, Swagger |
+| `UserDirectory.Tests` | Unit tests |
 
 ## Build
 
 ```bash
 dotnet build backend/user-directory.sln
 ```
+
+## Run
+
+```bash
+dotnet run --project backend/UserDirectory.Api/UserDirectory.Api.csproj --launch-profile backend
+```
+
+Then open Swagger at `https://localhost:7189/swagger`.
+
+### Visual Studio
+1. Open `backend/user-directory.sln`
+2. Right-click **UserDirectory.Api** → **Set as Startup Project**
+3. Select launch profile **backend** (or **https**)
+4. Press **F5** (Swagger opens automatically)
 
 ## Unit tests (MSTest)
 
@@ -20,27 +40,9 @@ dotnet test backend/user-directory.sln
 
 Or in Visual Studio: open `backend/user-directory.sln`, then Test → Run All Tests.
 
-The `backend/backend.Tests` project covers:
+The `UserDirectory.Tests` project covers:
 - `UsersController` (API responses with mocked service)
 - `UserService` (business logic with mocked repository)
-- `AuthController` (login / JWT issuance)
-
-## Run
-
-```bash
-dotnet run --project backend/backend.csproj --launch-profile backend
-```
-
-Then open Swagger at `https://localhost:7189/swagger`.
-
-### Visual Studio
-1. Open `backend/user-directory.sln`
-2. Right-click **backend** → **Set as Startup Project**
-3. Select launch profile **backend** (or **https**)
-4. Press **F5** (Swagger opens automatically)
-
-### Cursor / VS Code
-Press **F5** and choose **Backend API** (uses `.vscode/launch.json`).
 
 ## Auth (JWT Bearer)
 
@@ -88,3 +90,12 @@ When `Authority` is set, local `/api/auth/login` is disabled — get tokens from
 | POST | `/api/user-directory/add-user` | Yes | Create user |
 | PUT | `/api/user-directory/update-user/{id}` | Yes | Update user |
 | DELETE | `/api/user-directory/delete-user/{id}` | Yes | Delete user |
+
+## Cursor AI
+Use Cursor’s AI chat to simplify **code implementation** and **Git** — write features faster and handle **pull**, **commit**, and **push**
+
+## Default demo credentials
+
+| Username | Password |
+|----------|----------|
+| `admin` | `Admin@123` |
