@@ -1,0 +1,33 @@
+@UserDirectory.Api_HostAddress = https://localhost:7189
+@accessToken = replace-with-jwt-from-login
+
+### Login (local JWT)
+POST {{UserDirectory.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "Admin@123"
+}
+
+###
+
+GET {{UserDirectory.Api_HostAddress}}/api/user-directory/get-all-users
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+###
+
+POST {{UserDirectory.Api_HostAddress}}/api/user-directory/add-user
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "name": "Ada Lovelace",
+  "age": 36,
+  "city": "London",
+  "state": "England",
+  "pincode": "SW1A"
+}
+
+###

@@ -99,7 +99,7 @@ const UserList = () => {
 
       {!loading && !error && users.length === 0 && (
         <div className="status">
-          <p>No users yet.</p>
+          <p>No users found.</p>
           <Link to="/add" className="btn btn--primary">
             Add the first user
           </Link>
